@@ -1,0 +1,96 @@
+body {
+    background-color: #000;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Evitar el desbordamiento */
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* Asegura que el texto y el botón estén en columna */
+    align-items: center; /* Centra horizontalmente el contenido */
+    z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+}
+
+.centered-text {
+    color: #FFD700; /* Amarillo dorado */
+    font-size: 3rem; /* Aumentar tamaño de fuente */
+    font-style: italic; /* Estilo cursivo */
+    text-align: center;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFA500, 0 0 40px #FFA500, 0 0 50px #FFA500;
+    animation: glowing 1.5s infinite alternate;
+    position: relative;
+}
+
+/* Efecto de resplandor fosforescente */
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFA500, 0 0 20px #FFA500;
+    }
+    100% {
+        text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFA500, 0 0 50px #FFA500;
+    }
+}
+
+/* Estilo del botón */
+.custom-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #FFA500;
+    box-shadow: 0 0 15px #FFA500, 0 0 30px #FFA500;
+}
+
+/* Estilos para las flores */
+.flowers {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinea las flores en la parte inferior */
+    flex-wrap: wrap;
+}
+
+.flower {
+    width: 30px;
+    height: 30px;
+    background-color: #FFD700; /* Amarillo neón */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500; /* Efecto neón */
+    margin: 10px;
+    opacity: 0; /* Inicialmente oculto */
+    transform: scale(0); /* Inicialmente pequeño */
+    animation: growFlower 0.5s forwards; /* Animación para crecer */
+}
+
+@keyframes growFlower {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
